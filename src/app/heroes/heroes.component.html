@@ -1,0 +1,14 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!-- Herunder laver vi en løkke der læser dataen fra listen af heroes, efter en click funktion derfortæller at når der trykkes på en hero, 
+  er selected hero = hero. her tildeler vi den også en ccs klasse styling  -->
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"> 
+        <!-- Her gives en liste af heroes. Vi kan kun se den ved at load hele listen og tildele et navn hvorefter heroes kan displayes -->
+        <span class="badge">{{hero.id}}</span>{{hero.name}}
+    </li>
+</ul>
+<!-- Her bruger vi angular binding property til at bind et hero detail med den selected hero, så den kan inject detailjerne i hero-detail 
+Det kaldes ogsp for en onway databainding-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+

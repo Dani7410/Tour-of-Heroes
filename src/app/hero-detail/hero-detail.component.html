@@ -1,0 +1,12 @@
+<div *ngIf="hero">
+<!-- Vi bruger ngIf for at fortælle applikationen at den skal vise details af en heroes hvis den eksistere. 
+Grunden til at vi nehøver ngIf er fordi at der ikke er en valgt hero når applikationen startes. Men den vil stadig lede. 
+Derfor giver vi den en condition der istedet for at break applikationen, bare fjerne denne details sektion, og viser den når den er true. -->
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    </div>
+  
+  </div>
